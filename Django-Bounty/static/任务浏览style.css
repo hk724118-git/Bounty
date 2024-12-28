@@ -1,0 +1,125 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    background-color: #f3f9cd;
+    align-items: center;
+}
+
+div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 980px;
+}
+
+table {
+    overflow-y: auto;
+    text-align: center;
+    background-color: #fff;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 添加阴影 */
+    table-layout: fixed; /* 确保列宽度固定 */
+}
+
+    table tbody tr:nth-child(even) {
+        background-color: #f2f2f2; /* 偶数行背景色为浅灰色 */
+    }
+
+.table1 {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    table-layout: fixed; /* 确保列宽度固定 */
+}
+
+td {
+    width: 200px;
+    height: 80px;
+}
+
+th, td {
+    border: 1px solid #DCDFE6;
+}
+
+th {
+    width: 150.59px;
+    height: 50px;
+    background-color: honeydew;
+}
+
+h2 {
+    margin: 20px;
+    width: 200px;
+    height: 50px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    font-size: 2em;
+    border-radius: 10px;
+    background-color: #fff;
+    text-align: center;
+}
+
+button {
+    width: 50%;
+    height: 45px;
+    background: #fa709a;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 0.5em;
+    color: #FFF;
+    font-weight: 500;
+}
+
+    button:hover {
+        transform: scale(1.05); /* 鼠标悬停时稍微放大 */
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* 悬停时添加阴影 */
+    }
+
+    button:active {
+        transform: scale(1); /* 点击时恢复原样 */
+    }
+
+/* 返回按钮的样式 */
+.back-button {
+    width: 100px;
+    height: 40px;
+    background: #fa709a;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #FFF;
+    font-weight: 500;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1001; /* 确保按钮在其他内容之上 */
+}
+
+    .back-button:hover {
+        transform: scale(1.05); /* 鼠标悬停时稍微放大 */
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* 悬停时添加阴影 */
+    }
+
+    .back-button:active {
+        transform: scale(1); /* 点击时恢复原样 */
+    }
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: relative; /* 使返回按钮的绝对定位相对于此容器 */
+    margin-bottom: 20px;
+}

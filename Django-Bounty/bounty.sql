@@ -1,0 +1,2 @@
+USE bounty;
+ALTER TABLE bounty.admin AUTO_INCREMENT = 100001;

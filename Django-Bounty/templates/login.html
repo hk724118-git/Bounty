@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>登录页面</title>
+    <link href="{% static 'style.css' %}" rel="stylesheet" />
+</head>
+<body>
+    <div class="blob"></div>
+    <div class="wrapper">
+        <form action="{% url 'Bounty:login' %}" method="post">
+            {% csrf_token %}
+            <h2>登录页面</h2>
+            <div class="input-box">
+                <span class="icon"><ion-icon name="call-outline"></ion-icon></span>
+                <input type="text" id="id_username" name="username" class="input-field" placeholder="电话" required />
+                <label>电话</label>
+                {% if form.username.errors %}
+                <span class="error">{{ form.username.errors.0 }}</span>
+                {% endif %}
+            </div>
+            <div class="input-box">
+                <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+                <input type="password" id="id_password" name="password" class="input-field" placeholder="密码" required />
+                <label>密码</label>
+                {% if form.password.errors %}
+                <span class="error">{{ form.password.errors.0 }}</span>
+                {% endif %}
+            </div>
+            <button type="submit">登录按钮</button>
+            <div class="register-link">
+                <p>没有账号？<a href="{% url 'Bounty:signup' %}">点击注册</a></p>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+﻿img{
+    display:none;
+}
+
+#box-t{
+    position:relative;
+}
+
+#box-t img{
+    width:1000px;
+    height:400px;
+}
+
+#left{
+    font-size:45px;
+    color:#fff;
+    position:absolute;
+    top:45%;
+    cursor:pointer;
+}
+
+#right {
+    font-size: 45px;
+    color: #fff;
+    position: absolute;
+    top: 45%;
+    right:0;
+    cursor: pointer;
+}
+
+.tup{
+    display:block;
+}
+
+.box-t-y{
+    position:absolute;
+    right:45%;
+    bottom:0;
+}
+
+.box-t-y p{
+    width:20px;
+    height:20px;
+    display:inline-block;
+    opacity:0.7;
+    border:1px solid #fff;
+    border-radius:10px;
+    margin-right:10px;
+    cursor:pointer;
+}
+
+.box-y-x{
+    background:#6e9a3b
+}

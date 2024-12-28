@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>注册页面</title>
+    <link href="{% static 'style.css' %}" rel="stylesheet" />
+</head>
+<body>
+    <div class="blob"></div>
+    <div class="wrapper">
+        <form action="{% url 'Bounty:signup' %}" method="post">
+            {% csrf_token %}
+            <h2>注册页面</h2>
+            <div class="input-box">
+                <span class="icon"><ion-icon name="call-outline"></ion-icon></span>
+                <input type="text" id="id_telephone" name="telephone" class="input-field" placeholder="电话" required />
+                <label>电话</label>
+                {% if form.telephone.errors %}
+                <span class="error">{{ form.telephone.errors.0 }}</span>
+                {% endif %}
+            </div>
+            <div class="input-box">
+                <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+                <input type="password" id="id_password1" name="password1" class="input-field" placeholder="密码" required />
+                <label>密码</label>
+                {% if form.password1.errors %}
+                <span class="error">{{ form.password1.errors.0 }}</span>
+                {% endif %}
+            </div>
+            <div class="input-box">
+                <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+                <input type="password" id="id_password2" name="password2" class="input-field" placeholder="确认密码" required />
+                <label>确认密码</label>
+                {% if form.password2.errors %}
+                <span class="error">{{ form.password2.errors.0 }}</span>
+                {% endif %}
+            </div>
+            <div class="remember-forgot">
+                <label>
+                    <input type="checkbox" name="agree_terms" required />我同意所有条款
+                </label>
+            </div>
+            <button type="submit" class="submit-button">注册按钮</button>
+            <div class="register-link">
+                <p>已有账号？<a href="{% url 'Bounty:login' %}">点击登录</a></p>
+            </div>
+        </form>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

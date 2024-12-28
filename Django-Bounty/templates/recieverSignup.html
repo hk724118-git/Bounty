@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>接收者注册页面</title>
+    <link href="{% static 'style.css' %}" rel="stylesheet" />
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+</head>
+<body>
+    <div class="blob"></div>
+    <div class="wrapper">
+        <form action="{% url 'Bounty:recieverSignup' %}" method="post" novalidate>
+            {% csrf_token %}
+            <h2>接收者注册页面</h2>
+            <div class="input-box">
+                <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+                <input type="text" name="telephone" required class="input-field" placeholder="电话" />
+                <label>电话</label>
+            </div>
+            <div class="input-box">
+                <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+                <input type="password" name="password1" required class="input-field" placeholder="密码" />
+                <label>密码</label>
+            </div>
+            <div class="input-box">
+                <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+                <input type="password" name="password2" required class="input-field" placeholder="确认密码" />
+                <label>确认密码</label>
+            </div>
+            <div class="remember-forgot">
+                <label>
+                    <input type="checkbox" />我同意所有条款
+                </label>
+            </div>
+            <button type="submit">注册按钮</button>
+            <div class="register-link">
+                <p>已有账号？<a href="{% url 'Bounty:recieverLogin' %}">点击登录</a></p>
+            </div>
+            {% if form.errors %}
+            <div class="error-messages">
+                {% for field in form %}
+                {% for error in field.errors %}
+                <p>{{ error }}</p>
+                {% endfor %}
+                {% endfor %}
+                {% for error in form.non_field_errors %}
+                <p>{{ error }}</p>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </form>
+    </div>
+
+    <script type="module" src="https://unpkg.com/element-ui/lib/index.js"></script>
+    <script nomodule src="https://unpkg.com/element-ui/lib/index.js"></script>
+</body>
+</html>

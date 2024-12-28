@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>发布任务</title>
+    <link href="{% static 'publishstyle.css' %}" rel="stylesheet" />
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <h2>发布任务</h2>
+            <button class="back-button" onclick="location.href='{% url 'Bounty:index1' %}'">返回</button>
+        </div>
+        <form id="publish-task" method="post" action="{% url 'Bounty:publish_task' %}" novalidate>
+            {% csrf_token %}
+            <div>
+                <label for="id_TaskType">任务类型：</label>
+                {{ form.TaskType }}
+            </div>
+            <div>
+                <label for="id_Content">任务描述：</label>
+                {{ form.Content }}
+            </div>
+            <div>
+                <label for="id_Alocation">任务地点：</label>
+                {{ form.Alocation }}
+            </div>
+            <div>
+                <label for="id_Deadline">预期完成时间：</label>
+                {{ form.Deadline }}
+            </div>
+            <div>
+                <label for="id_Payment">酬金：</label>
+                {{ form.Payment }}
+            </div>
+            <div class="container">
+                <button id="submit" type="submit" value="发布任务">发布任务</button>
+            </div>
+            {% if form.errors %}
+            <div class="error-messages">
+                {% for field in form %}
+                {% for error in field.errors %}
+                <p>{{ error }}</p>
+                {% endfor %}
+                {% endfor %}
+                {% for error in form.non_field_errors %}
+                <p>{{ error }}</p>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </form>
+    </div>
+    <script>
+        document.getElementById('publish-task').addEventListener('submit', function (event) {
+            event.preventDefault();
+            const form = this;
+            const formData = new FormData(form);
+            fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value
+                }
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        // 处理成功的情况
+                        console.log('Task created successfully');
+                        window.location.href = '/Bounty/index1/';  // 重定向到某个页面
+                    } else {
+                        // 处理失败的情况
+                        console.log('Error:', data.error || data.errors);
+                        alert('任务发布失败，请检查输入信息后重试');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('任务发布失败，请检查网络连接后重试');
+                });
+        });
+    </script>
+</body>
+</html>

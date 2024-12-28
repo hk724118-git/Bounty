@@ -1,0 +1,106 @@
+﻿body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #FFFFE0;
+}
+
+.taskborder {
+    width: 80%;
+    max-width: 600px; /* 根据需要调整最大宽度 */
+    height: auto;
+    display: grid;
+    justify-items: center;
+    grid-template-rows: auto 1fr;
+    grid-gap: 10px;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* 垂直对齐方式调整为顶部对齐 */
+    width: 100%;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* 按钮右对齐 */
+    gap: 10px; /* 按钮之间的间距 */
+}
+
+.accept-task-btn {
+    width: 120px;
+    height: 45px;
+    background: #fa709a;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #FFF;
+    font-weight: 500;
+}
+
+.return-btn {
+    width: 120px;
+    height: 45px;
+    background: #85c1e9; /* 使用不同的背景色以区分按钮 */
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #FFF;
+    font-weight: 500;
+}
+
+p {
+    height: auto;
+    width: 100%;
+    font-size: 1.5em;
+    margin: 0;
+    border-radius: 20px;
+    background-color: #fff;
+    padding: 10px;
+    padding-left: 20px;
+    text-align: center; /* 居中文本 */
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    background-color: #fff;
+    border-radius: 20px;
+    writing-mode: vertical-rl;
+    padding: 20px;
+    text-align: center; /* 居中文本 */
+}
+
+.bolang {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background: url('your-background-image-url') no-repeat center center;
+    background-size: cover;
+}

@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>发布任务</title>
+    <link href="{% static 'publishstyle.css' %}" rel="stylesheet" />
+</head>
+<body>
+    <div class="wrapper">
+        <form id="publish-task" method="post" novalidate>
+            {% csrf_token %}
+            <div>
+                <label for="type">任务类型：</label>
+                <select id="type" name="type">
+                    <option value="购物">购物</option>
+                    <option value="送物">送物</option>
+                    <option value="打扫">打扫</option>
+                    <option value="取件">取件</option>
+                    <option value="其他">其他</option>
+                </select>
+            </div>
+            <div>
+                <label for="description">任务描述：</label>
+                {{ form.Content|add_class:"input-field" }}
+            </div>
+            <div>
+                <label for="dueDate">预期完成时间：</label>
+                {{ form.Deadline|add_class:"input-field" }}
+            </div>
+            <div>
+                <label for="reward">酬劳：</label>
+                {{ form.Payment|add_class:"input-field" }}
+            </div>
+            <div class="container">
+                <button id="submit" type="submit" value="发布任务">发布任务</button>
+            </div>
+            {% if form.errors %}
+            <div class="error-messages">
+                {% for field in form %}
+                {% for error in field.errors %}
+                <p>{{ error }}</p>
+                {% endfor %}
+                {% endfor %}
+                {% for error in form.non_field_errors %}
+                <p>{{ error }}</p>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </form>
+    </div>
+    <script src="{% static 'publishAction.js' %}"></script>
+</body>
+</html>

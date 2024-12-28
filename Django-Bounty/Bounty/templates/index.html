@@ -1,0 +1,124 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>主界面</title>
+    <link href="{% static 'index-style.css' %}" rel="stylesheet" />
+    <link href="{% static '轮播图style.css' %}" rel="stylesheet" />
+</head>
+<body>
+    <div class="box">
+        <!--一个大盒子-->
+        <div class="box-b">
+            <div class="box-b-d" id="deng">
+                <a id="denglink" href="{% url 'bounty:login' %}">登录</a>  <!--登录-->
+                <i>|</i>
+                <a id="zhucelink" href="{% url 'bounty:signup' %}">注册</a> <!--注册-->
+            </div>
+            <div class="box-b-s">
+                <p id="time"></p> <!--获取当前时间-->
+            </div>
+            <div class="box-k">
+                <div class="box-k-t">
+                    <!--logo-->
+                    logo
+                </div>
+                <ul class="box-k-b">
+                    <!--导航栏-->
+                    <li>
+                        <a href="{% url 'index' %}">首页</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'bounty:my_orders' %}">我的订单</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'bounty:my_tasks' %}">我的任务</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'bounty:my_messages' %}">我的消息</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="box-t">
+            <!--轮播图-->
+            <div id="left">
+                <span><</span>
+            </div>
+            <div id="right">
+                <span>></span>
+            </div>
+            <img class="tup" src="{% static 'images/1.jpeg' %}" />
+            <img src="{% static 'images/2.jpg' %}" />
+            <img src="{% static 'images/3.jpg' %}" />
+            <div class="box-t-y">
+                <p class="box-y-x"></p>
+                <p></p>
+                <p></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>主界面</title>
+    <link href="{% static 'index-style.css' %}" rel="stylesheet" />
+    <link href="{% static '轮播图style.css' %}" rel="stylesheet" />
+</head>
+<body>
+    <div class="box">
+        <!--一个大盒子-->
+        <div class="box-b">
+            <div class="box-b-d" id="deng">
+                <a id="denglink" href="{% url 'bounty:login' %}">登录</a>  <!--登录-->
+                <i>|</i>
+                <a id="zhucelink" href="{% url 'bounty:signup' %}">注册</a> <!--注册-->
+            </div>
+            <div class="box-b-s">
+                <p id="time"></p> <!--获取当前时间-->
+            </div>
+            <div class="box-k">
+                <div class="box-k-t">
+                    <!--logo-->
+                    logo
+                </div>
+                <ul class="box-k-b">
+                    <!--导航栏-->
+                    <li>
+                        <a href="{% url 'index' %}">首页</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'bounty:my_orders' %}">我的订单</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'bounty:my_tasks' %}">我的任务</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'bounty:my_messages' %}">我的消息</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="box-t">
+            <!--轮播图-->
+            <div id="left">
+                <span><</span>
+            </div>
+            <div id="right">
+                <span>></span>
+            </div>
+            <img class="tup" src="{% static 'images/1.jpeg' %}" />
+            <img src="{% static 'images/2.jpg' %}" />
+            <img src="{% static 'images/3.jpg' %}" />
+            <div class="box-t-y">
+                <p class="box-y-x"></p>
+                <p></p>
+                <p></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

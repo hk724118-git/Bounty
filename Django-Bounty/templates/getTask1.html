@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>任务详情页</title>
+    <link href="{% static 'getTaskstyle.css' %}" rel="stylesheet" />
+</head>
+<body>
+    <div class="taskborder">
+        <div class="header">
+            <h2>任务详情</h2>
+            <div class="button-container">
+                <button class="accept-task-btn" onclick="location.href='{% url 'Bounty:index2' %}'">接收任务</button>
+                <button class="return-btn" onclick="location.href='{% url 'Bounty:task_list' %}'">返回</button>
+            </div>
+        </div>
+        <div id="app">
+            {% if task %}
+            <p><strong>任务类型：</strong>{{ task.type }}</p>
+            <p><strong>任务描述：</strong>{{ task.description }}</p>
+            <p><strong>任务地点：</strong>{{ task.alocation }}</p>
+            <p><strong>预期完成时间：</strong>{{ task.dueDate }}</p>
+            <p><strong>酬劳：</strong>{{ task.reward }}</p>
+            {% else %}
+            <p>任务详情加载中...</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

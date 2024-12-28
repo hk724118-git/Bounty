@@ -1,0 +1,106 @@
+﻿body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #FFFFE0;
+    overflow: hidden;
+}
+
+.dingzhi {
+    display: flex;
+    justify-content: center; /* 水平居中 */
+    align-items: flex-start; /* 垂直顶置 */
+    height: 200px; /* 设置容器高度 */
+    width: 100%;
+    height: 10px;
+}
+
+h2 {
+    font-size: 2em;
+    color: rgba(31,38,135,0.37);
+}
+
+.wrapper { /*透明背景板*/
+    width: 600px;
+    height: 650px;
+    background: rgba(255,255,255,0.15);
+    box-shadow: 0 8px 32px rgba(31,38,135,0.37);
+    border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* 使返回按钮的绝对定位相对于此容器 */
+}
+
+form {
+    margin: 20px;
+}
+
+button {
+    width: 100%;
+    height: 45px;
+    background: #fa709a;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #FFF;
+    font-weight: 500;
+}
+
+label {
+    display: inline-block;
+    color: #e8c0f8;
+    margin-bottom: 20px;
+}
+
+input[type="text"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc; /* 添加边框 */
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+/* 返回按钮的样式 */
+.back-button {
+    width: 100px;
+    height: 40px;
+    background: #fa709a;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #FFF;
+    font-weight: 500;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1001; /* 确保按钮在其他内容之上 */
+}
+
+    .back-button:hover {
+        transform: scale(1.05); /* 鼠标悬停时稍微放大 */
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* 悬停时添加阴影 */
+    }
+
+    .back-button:active {
+        transform: scale(1); /* 点击时恢复原样 */
+    }
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: relative; /* 使返回按钮的绝对定位相对于此容器 */
+    margin-bottom: 20px;
+}
